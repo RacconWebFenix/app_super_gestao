@@ -7,22 +7,23 @@
     @endphp
 </h3>
 @isset($fornecedores)
-    @for ($i = 0; isset($fornecedores[$i]); $i++)
+    @foreach ($fornecedores as $item)
         <h3>
-            Fornecedor: {{ $fornecedores[$i]['nome'] ?? '' }}
+            Fornecedor: {{ $item['nome'] ?? '' }}
         </h3>
         <h3>
-            Status: {{ $fornecedores[$i]['status'] ?? '' }}
+            Status: {{ $item['status'] ?? '' }}
         </h3>
         <h3>
-            CNPJ: {{ $fornecedores[$i]['cnpj'] ?? '' }}
+            CNPJ: {{ $item['cnpj'] ?? '' }} oi?
         </h3>
         <h3>
-            DDD: {{ $fornecedores[$i]['ddd'] ?? '' }}
+            DDD: {{ $item['ddd'] ?? '' }}
         </h3>
         <h3>
-            Telefone: {{ $fornecedores[$i]['telefone'] ?? '' }}
+            Telefone: {{ $item['telefone'] ?? '' }}
         </h3>
         <hr>
-    @endfor
+    @endforeach
+
 @endisset
