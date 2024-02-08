@@ -15,6 +15,9 @@
     </h3>
     <h3>
         CNPJ:{{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+            -vazio
+        @endempty
     </h3>
     <hr>
     <h3>
@@ -28,4 +31,10 @@
             CNPJ:{{ $fornecedores[1]['cnpj'] }}
         @endisset
     </h3>
+    <hr>
+    <h3>
+        Result: {{ $result }}
+    </h3>
+
+
 @endisset
