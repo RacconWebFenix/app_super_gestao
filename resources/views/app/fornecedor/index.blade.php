@@ -7,7 +7,7 @@
     @endphp
 </h3>
 @isset($fornecedores)
-    @foreach ($fornecedores as $item)
+    @forelse ($fornecedores as $item)
         <h3>
             Fornecedor: {{ $item['nome'] ?? '' }}
         </h3>
@@ -24,6 +24,9 @@
             Telefone: {{ $item['telefone'] ?? '' }}
         </h3>
         <hr>
-    @endforeach
+    @empty
+        Não existe fornecedores
+    @endforelse
+
 
 @endisset
