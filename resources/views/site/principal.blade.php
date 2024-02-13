@@ -29,7 +29,7 @@
                     formulário abaixo.</p>
 
                 @component('site.layouts._components.formcontato', ['classe' => 'borda-branca'])
-                    <h3>teste</h3>
+                    {{-- <h3>teste</h3> --}}
                 @endcomponent
             </div>
         </div>
