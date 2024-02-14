@@ -9,15 +9,21 @@
     <br>
     <select name="motivo" class="{{ $classe }}">
         <option value="">Qual o motivo do contato?</option>
-        <option value="1"{{ old('motivo') == '1' ? 'selected' : '' }}>Dúvida</option>
-        <option value="2"{{ old('motivo') == '2' ? 'selected' : '' }}>Elogio</option>
-        <option value="3"{{ old('motivo') == '3' ? 'selected' : '' }}>Reclamação</option>
+        @foreach ($motivo as $key => $item)
+            <option value="{{ $item->id }}" {{ old('motivo') == $item->id ? 'selected' : '' }}>
+                {{ $item->motivo_contato }}
+            </option>
+        @endforeach
+
+
     </select>
     <br>
     <textarea name="mensagem" value="{{ old('mensagem') }}" class="{{ $classe }}">{{ old('mensagem') != '' ? old('mensagem') : 'Digite sua mensagem' }}</textarea>
     <br>
     <button type="submit" class="{{ $classe }}">ENVIAR</button>
 </form>
+
+
 <div style="position: absolute; top:0px; left:0px; width: 100%; background: red;">
     <pre>
         {{ print_r($errors) }}

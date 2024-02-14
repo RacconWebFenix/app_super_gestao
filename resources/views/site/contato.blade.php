@@ -8,13 +8,15 @@
 
         <div class="informacao-pagina">
             <div class="contato-principal">
-                @component('site.layouts._components.formcontato', ['classe' => 'borda-preta'])
+                @component('site.layouts._components.formcontato', ['classe' => 'borda-preta', 'motivo' => $motivo])
                     <p>A nossa equipe analisara...</p>
                     <p>Nosso tem é de ....</p>
                 @endcomponent
             </div>
         </div>
     </div>
+
+
 
     @include('site.layouts._partials.rodape')
 @endsection

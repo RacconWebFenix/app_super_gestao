@@ -28,8 +28,7 @@
                 <p>Caso tenha qualquer dúvida por favor entre em contato com nossa equipe pelo
                     formulário abaixo.</p>
 
-                @component('site.layouts._components.formcontato', ['classe' => 'borda-branca'])
-                    {{-- <h3>teste</h3> --}}
+                @component('site.layouts._components.formcontato', ['classe' => 'borda-branca', 'motivo' => $motivo])
                 @endcomponent
             </div>
         </div>
