@@ -8,7 +8,10 @@
 
         <div class="informacao-pagina">
             <div class="contato-principal">
-                @component('site.layouts._components.formcontato', ['classe' => 'borda-preta', 'motivo' => $motivo])
+                @component('site.layouts._components.formcontato', [
+                    'classe' => 'borda-preta',
+                    'motivo_contatos_id' => $motivo,
+                ])
                     <p>A nossa equipe analisara...</p>
                     <p>Nosso tem é de ....</p>
                 @endcomponent
