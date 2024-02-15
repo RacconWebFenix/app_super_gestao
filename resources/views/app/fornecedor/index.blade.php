@@ -1,11 +1,5 @@
 <h3>Fornececedor</h3>
 
-<h3>
-
-    @php
-
-    @endphp
-</h3>
 @isset($fornecedores)
     @forelse ($fornecedores as $item)
         Iteração atual: {{ $loop->iteration }}

@@ -1,20 +1,21 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'index'])->name('site.index');
+Route::get('/', [\App\Http\Controllers\PrincipalController::class, 'index'])
+    ->name('site.index');
 
-Route::get('/sobre', [\App\Http\Controllers\SobreController::class, 'sobre'])->name('site.sobre');
+Route::get('/sobre', [\App\Http\Controllers\SobreController::class, 'sobre'])->middleware('log.acesso')->name('site.sobre');
 
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class, 'contato'])->name('site.contato');
 
 Route::post('/contato', [\App\Http\Controllers\ContatoController::class, 'salvar'])->name('site.contato');
 
-Route::get('/login', function () {
-    return 'login';
-})->name('site.login');
+Route::get('/login/{erro?}', [\App\Http\Controllers\LoginController::class, 'index'])->name('site.login');
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'autenticar'])->name('site.login');
 
-Route::prefix('/app')->group(
+Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(
     function () {
         Route::get('/clientes', function () {
             return 'clientes';
